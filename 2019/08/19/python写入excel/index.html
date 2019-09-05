@@ -43,7 +43,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: '',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="在这里介绍两种写入excel的方法：xlwt和xlsxwriter 。 区别：xlwt：只能写入xls格式的excel，并且写入同一个文件会循环覆盖；而xlsxwriter支持写入xls和xlsx格式。 xlwt12345678910import xlwtworkbook = xlwt.Workbook(encoding = &apos;utf-8&apos;)     # 创建一个workbook 设置编码work">
+  <meta name="description" content="在这里介绍两种写入excel的方法：xlwt和xlsxwriter 。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python写入excel">
 <meta property="og:url" content="http://zzu-xcy.cn/2019/08/19/python写入excel/index.html">
 <meta property="og:site_name" content="一头秃驴的技术博客">
-<meta property="og:description" content="在这里介绍两种写入excel的方法：xlwt和xlsxwriter 。 区别：xlwt：只能写入xls格式的excel，并且写入同一个文件会循环覆盖；而xlsxwriter支持写入xls和xlsx格式。 xlwt12345678910import xlwtworkbook = xlwt.Workbook(encoding = &apos;utf-8&apos;)     # 创建一个workbook 设置编码work">
+<meta property="og:description" content="在这里介绍两种写入excel的方法：xlwt和xlsxwriter 。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-09-04T09:21:31.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python写入excel">
-<meta name="twitter:description" content="在这里介绍两种写入excel的方法：xlwt和xlsxwriter 。 区别：xlwt：只能写入xls格式的excel，并且写入同一个文件会循环覆盖；而xlsxwriter支持写入xls和xlsx格式。 xlwt12345678910import xlwtworkbook = xlwt.Workbook(encoding = &apos;utf-8&apos;)     # 创建一个workbook 设置编码work">
+<meta name="twitter:description" content="在这里介绍两种写入excel的方法：xlwt和xlsxwriter 。">
   <link rel="canonical" href="http://zzu-xcy.cn/2019/08/19/python写入excel/">
 
 
@@ -153,6 +153,8 @@
         <li class="menu-item menu-item-home">
       
     
+      
+    
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
@@ -164,8 +166,10 @@
         <li class="menu-item menu-item-categories">
       
     
+      
+    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">2</span></a>
 
   </li>
       
@@ -175,15 +179,44 @@
         <li class="menu-item menu-item-archives">
       
     
+      
+    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">3</span></a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
   </ul>
 
     
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -266,6 +299,14 @@
           
 
           
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
         </div>
       </header>
@@ -276,7 +317,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在这里介绍两种写入excel的方法：xlwt和xlsxwriter 。</p>
+        <p>在这里介绍两种写入excel的方法：xlwt和xlsxwriter 。</p><a id="more"></a>
 <p>区别：xlwt：只能写入xls格式的excel，并且写入同一个文件会循环覆盖；而xlsxwriter支持写入xls和xlsx格式。</p>
 <h5 id="xlwt"><a href="#xlwt" class="headerlink" title="xlwt"></a>xlwt</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlwt</span><br><span class="line"></span><br><span class="line">workbook = xlwt.Workbook(encoding = <span class="string">'utf-8'</span>)     <span class="comment"># 创建一个workbook 设置编码</span></span><br><span class="line"></span><br><span class="line">worksheet = workbook.add_sheet(<span class="string">'sheet1'</span>)         <span class="comment"># 创建一个名为'sheet1'的工作表</span></span><br><span class="line"></span><br><span class="line">worksheet.write(<span class="number">0</span>,<span class="number">0</span>, label = <span class="string">'ok'</span>)               <span class="comment"># 在第一行第一列写入ok</span></span><br><span class="line"></span><br><span class="line">workbook.save(<span class="string">'test.xls'</span>)                        <span class="comment"># 保存</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -465,11 +506,46 @@
   </span>
   <span class="author" itemprop="copyrightHolder">一头秃驴</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
 
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/12/2019 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "Run for "+dnum+" Days ";
+        document.getElementById("times").innerHTML = hnum + " Hours " + mnum + " m " + snum + " s";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
 
 
 
@@ -508,6 +584,8 @@
 
 
 
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
 
 
 

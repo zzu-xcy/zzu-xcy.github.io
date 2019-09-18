@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="pytest中文文档1&amp;#123;% pdf ./pytest中文文档.pdf %&amp;#125;">
+  <meta name="description" content="pytest中文文档 1&amp;#123;% pdf ./Blog/source/_posts/pytest.pdf %&amp;#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pyest">
+<meta property="og:title" content="pytest">
 <meta property="og:url" content="http://zzu-xcy.cn/2019/09/18/pyest/index.html">
 <meta property="og:site_name" content="一头秃驴的技术博客">
-<meta property="og:description" content="pytest中文文档1&amp;#123;% pdf ./pytest中文文档.pdf %&amp;#125;">
+<meta property="og:description" content="pytest中文文档 1&amp;#123;% pdf ./Blog/source/_posts/pytest.pdf %&amp;#125;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-18T06:02:15.991Z">
+<meta property="og:updated_time" content="2019-09-18T06:30:35.396Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pyest">
-<meta name="twitter:description" content="pytest中文文档1&amp;#123;% pdf ./pytest中文文档.pdf %&amp;#125;">
+<meta name="twitter:title" content="pytest">
+<meta name="twitter:description" content="pytest中文文档 1&amp;#123;% pdf ./Blog/source/_posts/pytest.pdf %&amp;#125;">
   <link rel="canonical" href="http://zzu-xcy.cn/2019/09/18/pyest/">
 
 
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>pyest | 一头秃驴的技术博客</title>
+  <title>pytest | 一头秃驴的技术博客</title>
   
 
 
@@ -169,7 +169,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">3</span></a>
 
   </li>
       
@@ -253,7 +253,7 @@
       <meta itemprop="name" content="一头秃驴的技术博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">pyest
+        <h1 class="post-title" itemprop="name headline">pytest
 
           
         </h1>
@@ -269,7 +269,7 @@
                 
               
 
-              <time title="创建时间：2019-09-18 13:59:55 / 修改时间：14:02:15" itemprop="dateCreated datePublished" datetime="2019-09-18T13:59:55+08:00">2019-09-18</time>
+              <time title="创建时间：2019-09-18 13:59:55 / 修改时间：14:30:35" itemprop="dateCreated datePublished" datetime="2019-09-18T13:59:55+08:00">2019-09-18</time>
             </span>
           
             
@@ -282,7 +282,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/pytest/" itemprop="url" rel="index"><span itemprop="name">pytest</span></a></span>
 
                 
                 
@@ -309,7 +309,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="pytest中文文档"><a href="#pytest中文文档" class="headerlink" title="pytest中文文档"></a>pytest中文文档</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% pdf ./pytest中文文档.pdf %&#125;</span><br></pre></td></tr></table></figure>
+        <p>pytest中文文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% pdf ./Blog/source/_posts/pytest.pdf %&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -407,8 +408,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#pytest中文文档"><span class="nav-number">1.</span> <span class="nav-text">pytest中文文档</span></a></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
@@ -438,7 +437,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -595,6 +594,25 @@ setInterval("createtime()",250);
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 

@@ -19,7 +19,7 @@
   <entry>
     <title><![CDATA[python读取excel]]></title>
     <url>%2F2019%2F08%2F15%2Fpython%E8%AF%BB%E5%8F%96excel%2F</url>
-    <content type="text"><![CDATA[Python读Excel—xlrd打开cmd命令行窗口，输入pip install xlrd，小编之前安装成功，如下图所示。 下面开始写代码：下面列出了读取excel可能用到的功能，请根据需要自行选取。 123456789101112131415161718import xlrdpath = 'test.xlsx' # 设置excel存放的路径，我把excel放到了和代码同级目录下data = xlrd.open_workbook(path) # 打开excel文件data.sheet_names() # 获取xlsx文件中所有sheet的名称table = data.sheet_by_index(0) # 通过索引获取xlsx文件第0个sheettable = data.sheet_by_name(u'Sheet1') #通过名称获取table.row_values(i) #获取整行的值table.col_values(i) #获取整列的值nrows = table.nrows # 获取工作表总行数ncols = table.ncols # 获取工作表总列数cell_A1 = table.cell(i, 0).value # 获取第i行第一列的值cell_B1 = table.cell(i, 1).value # 获取第i行第二列的值 ​]]></content>
+    <content type="text"><![CDATA[Python读Excel—xlrd打开cmd命令行窗口，输入pip install xlrd，小编之前安装成功，如下图所示。 下面开始写代码：下面列出了读取excel可能用到的功能，请根据需要自行选取。 123456789101112131415161718import xlrdpath = 'test.xlsx' # 设置excel存放的路径，我把excel放到了和代码同级目录下data = xlrd.open_workbook(path) # 打开excel文件data.sheet_names() # 获取xlsx文件中所有sheet的名称table = data.sheet_by_index(0) # 通过索引获取xlsx文件第0个sheettable = data.sheet_by_name(u'Sheet1') #通过名称获取table.row_values(i) #获取整行的值table.col_values(i) #获取整列的值nrows = table.nrows # 获取工作表总行数ncols = table.ncols # 获取工作表总列数cell_A1 = table.cell(i, 0).value # 获取第i行第一列的值cell_B1 = table.cell(i, 1).value # 获取第i行第二列的值]]></content>
       <categories>
         <category>python</category>
       </categories>

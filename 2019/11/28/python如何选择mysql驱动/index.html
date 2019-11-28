@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="一头秃驴的技术博客">
 <meta property="og:description" content="目前可供选择的驱动大概有三种：mysqlclinent，python-mysql，pymysql。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-28T06:25:32.235Z">
+<meta property="og:updated_time" content="2019-11-28T06:31:17.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python如何选择mysql驱动">
 <meta name="twitter:description" content="目前可供选择的驱动大概有三种：mysqlclinent，python-mysql，pymysql。">
@@ -269,7 +269,7 @@
                 
               
 
-              <time title="创建时间：2019-11-28 13:58:28 / 修改时间：14:25:32" itemprop="dateCreated datePublished" datetime="2019-11-28T13:58:28+08:00">2019-11-28</time>
+              <time title="创建时间：2019-11-28 13:58:28 / 修改时间：14:31:17" itemprop="dateCreated datePublished" datetime="2019-11-28T13:58:28+08:00">2019-11-28</time>
             </span>
           
             
@@ -310,11 +310,14 @@
 
       
         <p>目前可供选择的驱动大概有三种：mysqlclinent，python-mysql，pymysql。</p><a id="more"></a>
-<h5 id="1-mysqlclient"><a href="#1-mysqlclient" class="headerlink" title="1.mysqlclient:"></a>1.mysqlclient:</h5><p>优点:python2,3都能直接使用。</p>
-<p>致命缺点：对mysql的安装有要求，必须指定位置存在配置文件。</p>
-<h5 id="2-python-mysql"><a href="#2-python-mysql" class="headerlink" title="2.python-mysql:"></a>2.python-mysql:</h5><p>python2支持很好、python3不支持。</p>
-<h5 id="3-pymysql（推荐）："><a href="#3-pymysql（推荐）：" class="headerlink" title="3.pymysql（推荐）："></a>3.pymysql（推荐）：</h5><p>python2,3都支持并且他还可以伪装成前面的库。</p>
-<p>如果你是python3x，django2.x.x,请选择pymysql，在使用中需要修改一些配置文件，请接着往下看。</p>
+<h5 id="1-mysqlclient"><a href="#1-mysqlclient" class="headerlink" title="1.mysqlclient:"></a>1.mysqlclient:</h5><p>-优点:python2,3都能直接使用。</p>
+<p>-致命缺点：对mysql的安装有要求，必须指定位置存在配置文件。</p>
+<h5 id="2-python-mysql"><a href="#2-python-mysql" class="headerlink" title="2.python-mysql:"></a>2.python-mysql:</h5><p>-python2支持很好、python3不支持。</p>
+<h5 id="3-pymysql（推荐）："><a href="#3-pymysql（推荐）：" class="headerlink" title="3.pymysql（推荐）："></a>3.pymysql（推荐）：</h5><p>-python2,3都支持并且他还可以伪装成前面的库。</p>
+<p>-找到项目文件<strong>init</strong>.py,在里面输入一下内容即可使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
+
+<p>如果你是python3x，django2.x.x，在使用中需要修改一些配置文件，请参考《报错mysqlclient 1.3.13 or newer is required; you have 0.9.3.解决方法》。</p>
 
     </div>
 

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python报错mysqlclient 1.3.13 or newer is required; you have 0.9.3.]]></title>
+    <url>%2F2019%2F11%2F28%2Fpython%E6%8A%A5%E9%94%99mysqlclient-1-3-13-or-newer-is-required-you-have-0-9-3%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[python如何选择mysql驱动]]></title>
     <url>%2F2019%2F11%2F28%2Fpython%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9mysql%E9%A9%B1%E5%8A%A8%2F</url>
     <content type="text"><![CDATA[目前可供选择的驱动大概有三种：mysqlclinent，python-mysql，pymysql。 1.mysqlclient:-优点:python2,3都能直接使用。 -致命缺点：对mysql的安装有要求，必须指定位置存在配置文件。 2.python-mysql:-python2支持很好、python3不支持。 3.pymysql（推荐）：-python2,3都支持并且他还可以伪装成前面的库。 -找到项目文件下的init.py，在里面输入以下内容即可使用： 12import pymysqlpymysql.install_as_MySQLdb() 如果你是python3x，django2.x.x，在使用中需要修改一些配置文件，请参考《报错mysqlclient 1.3.13 or newer is required; you have 0.9.3.解决方法》]]></content>

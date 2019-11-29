@@ -7,6 +7,10 @@
       <categories>
         <category>python</category>
       </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>django</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[python如何选择mysql驱动]]></title>
@@ -15,6 +19,10 @@
       <categories>
         <category>python</category>
       </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>mysql</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[pytest]]></title>
@@ -31,6 +39,9 @@
       <categories>
         <category>python</category>
       </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[python读取excel]]></title>
@@ -39,6 +50,9 @@
       <categories>
         <category>python</category>
       </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[安装selenium]]></title>
@@ -47,5 +61,9 @@
       <categories>
         <category>selenium</category>
       </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>selenium</tag>
+      </tags>
   </entry>
 </search>
